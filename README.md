@@ -1,3 +1,37 @@
+# Работа расположена в трех репозиториях  
+https://github.com/LgvGeo/new_admin_panel_sprint_3 для etl  
+https://github.com/LgvGeo/ms-cinema-api асинхронный апи  
+В текущем репозитории расположен файл с индексами для elastic и докер компоуз файлом который поднимает все базы данных:
+postgresql, elasticsearch, redis, и веб сервер nginx (сделано это потому то каждый проект должен быть независимым, при запуске предполагается что все контейнеры будут подключаться к одной сети cinema_network). Чтобы запустить сервер с api нужно сначала поднять всю инфраструктуру с базами данных.  
+
+Чтобы поднять инфраструктуру с бд создаем .env файл с преременными окружения (пример)  
+POSTGRES_PASSWORD=postgres  
+POSTGRES_USER=postgres  
+POSTGRES_DB=postgres  
+
+Чтобы поднять api создаем .env файл с преременными окружения (пример)  
+
+ELASTIC_HOST=elastic  
+ELASTIC_PORT=9200  
+REDIS_HOST=redis  
+REDIS_PORT=6379  
+
+Чтобы поднять etl создаем .env файл с преременными окружения (пример)  
+
+DB_NAME=postgres  
+DB_USER=postgres  
+DB_PASSWORD=postgres  
+DB_HOST=db  
+DB_PORT=5432  
+ELASTICSEARCH_CONN_URI=http://elastic:9200  
+REDIS_HOST=redis  
+REDIS_PORT=6379  
+POSTGRES_PASSWORD=postgres  
+POSTGRES_USER=postgres  
+POSTGRES_DB=postgres  
+
+
+
 # Проектная работа 4 спринта
 
 **Важное сообщение для тимлида:** для ускорения проверки проекта укажите ссылку на приватный репозиторий с командной работой в файле readme и отправьте свежее приглашение на аккаунт [BlueDeep](https://github.com/BigDeepBlue).
